@@ -1,0 +1,41 @@
+{
+  "name": "dsh-coder-mode",
+  "version": "1.1.1",
+  "private": true,
+  "description": "码农模式：可选模式（/coder on|off）、项目形态探测、官方来源优先、缺失直说、改动前备份",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "mode.js",
+    "policy.js",
+    "rules.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "test/*.mjs"
+  ],
+  "scripts": {
+    "check": "node --check index.js && node --check mode.js && node --check policy.js && node --check rules.js && node --check client.js",
+    "test": "node test/self-test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

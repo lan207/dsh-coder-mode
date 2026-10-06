@@ -1,0 +1,27 @@
+# 码农模式 (Coder Mode) bundle patch。
+# 安装：plugin_manager install_bundle，target 为本包打好的 dist\dsh-coder-mode-<版本>.tgz
+#（不要装目录：本机 pnpm workspace + 跨盘符下 link:/file: 目录会生成死链接，详见 README）。
+# 行 id 固定为 coder-mode；config 字段全部可省略，省略时用插件默认值。
+- insert:
+    - id: coder-mode
+      name: dsh-coder-mode
+      config:
+        # zh | en：策略段、上下文、工具描述与开关文案的语言。
+        language: zh
+        # 可选模式：新会话默认关，用 /coder on（或输入框左侧开关）打开。
+        enabledByDefault: false
+        # 开关命令名（不带斜杠）。
+        command: coder
+        # 是否注册策略系统提示段 / 注入工作区事实 / 注册两个工具（仅前两项受模式开关限制）。
+        policySection: true
+        workspaceContext: true
+        tools: true
+        # 工作目录向下扫描层数；单次扫描读取目录数上限。
+        scanDepth: 2
+        maxScanDirs: 80
+        # 向上查找时最多上溯层数（仍需用户先同意）。
+        parentLevels: 8
+        # 同一会话扫描结果的缓存时长（毫秒）。
+        refreshMs: 60000
+        # 备份根目录；空串 = <系统临时目录>/dsh-coder-mode/<会话>。
+        backupDir: ''

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Coder Mode",
+    "description": "An optional mode, off by default: turn it on with /coder on or the switch at the left of the composer. While on it enforces hard rules for coding and game-engine work: tell a project workspace from loose files and ask before searching parent directories; check official documentation and repositories first for engine/framework questions; say \"I don't know\" with the sources and clues you actually checked; list missing resources and broken links explicitly; back up with coder_backup before any possibly irreversible change. Both tools stay available while the mode is off."
+  }
+}
